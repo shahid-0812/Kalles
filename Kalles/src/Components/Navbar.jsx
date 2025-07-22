@@ -1,24 +1,44 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 export const Navbar = () => {
+
+    const [isClose, setIsClose] = useState(false);
+
+    const hoverEffect = "hover:text-[#56cfe1] cursor-pointer transition duration-300"
+
     return (
         <nav className='navbar-container'>
-            <div className='row-1 regular text-xs py-1 text-[#fff] bg-[#e91e63] px-4 justify-between flex items-center'>
-                <div className="w-10 h-10 "></div>
-                <span>Today deal sale off <span className='medium text-sm'> 70% </span>End In. <span className=''>Hurry Up </span> <i className="bi bi-arrow-right"></i>
-                </span>
-                <span className='flex items-center'><i className="bi bi-x text-lg"></i>close</span>
-            </div>
+            {!isClose && (
+                <div className="row-1 cursor-pointer regular text-xs py-1 text-[#fff] bg-[#e91e63] px-4 justify-between flex items-center">
+                    <div className="w-10 h-10"></div>
+                    <span>
+                        Today deal sale off
+                        <span className='medium text-sm'> 70%</span> End In.
+                        <span className='group hover:text-[#e6e6e6] inline-flex items-center cursor-pointer'>
+                            Hurry Up
+                            <i className="bi bi-arrow-right ml-0.5 transform transition-all duration-300 group-hover:translate-x-1"></i>
+                        </span>
+                    </span>
+
+                    <span className='flex items-center cursor-pointer' onClick={() => setIsClose(true)}>
+                        <i className="bi bi-x text-lg"></i> close
+                    </span>
+                </div>
+            )}
             <div className="row-2 bg-[#f6f6f8] text-[#878787] py-4 px-4 text-xs regular flex justify-between">
                 <div className="contacts  flex gap-3">
-                    <span>
+                    <div>
                         <i className="bi bi-telephone mr-2"></i>
-                        +01 23456789
-                    </span>
-                    <span>
+                        <span className={hoverEffect}>
+                            +01 23456789
+                        </span>
+                    </div>
+                    <div>
                         <i className="bi bi-envelope mr-2"></i>
-                        kalles@domain.com
-                    </span>
+                        <span className={hoverEffect}>
+                            kalles@domain.com
+                        </span>
+                    </div>
                 </div>
                 <div className="sale">
                     <span>

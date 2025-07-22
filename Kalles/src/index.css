@@ -31,3 +31,23 @@ body {
   font-family: "medium";
 }
 
+.swipe-btn{
+  position: relative;
+  overflow: hidden;
+}
+.swipe-btn::before{
+  content: "";
+  background-color: #23b2c7;
+ 
+  position: absolute;
+  top: -50%;
+  left: -100%;
+  width: 100%;
+  height: 200%;
+  border-radius: 50%;
+  z-index: 0;
+  transition: 0.3s ease;
+}
+.swipe-btn:hover::before{
+  left: 0;
+}
