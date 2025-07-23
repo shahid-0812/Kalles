@@ -31,14 +31,15 @@ body {
   font-family: "medium";
 }
 
-.swipe-btn{
+.swipe-btn {
   position: relative;
   overflow: hidden;
 }
-.swipe-btn::before{
+
+.swipe-btn::before {
   content: "";
   background-color: #23b2c7;
- 
+
   position: absolute;
   top: -50%;
   left: -100%;
@@ -48,6 +49,81 @@ body {
   z-index: 0;
   transition: 0.3s ease;
 }
-.swipe-btn:hover::before{
+
+.swipe-btn:hover::before {
   left: 0;
+}
+
+.box {
+  position: relative;
+  width: 350px;
+  height: 250px;
+  /* padding: 20px; */
+  /* background-color: #fff; */
+  box-sizing: border-box;
+  overflow: hidden;
+
+}
+
+/* Top-left to bottom-right */
+.box::before,
+.box::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 0%;
+  border: 1px solid white;
+  z-index: 1;
+  pointer-events: none;
+  transition: all 0.5s ease;
+  opacity: 0;
+}
+
+.box::before {
+  top: 0;
+  left: 0;
+  border-right: none;
+  border-bottom: none;
+}
+
+.box::after {
+  bottom: 0;
+  right: 0;
+  border-left: none;
+  border-top: none;
+}
+
+.box:hover::before,
+.box:hover::after {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+}
+
+.bounce-btn:hover {
+  animation: bounceClick 0.3s ease;
+}
+
+@keyframes bounceClick {
+  0% {
+    transform: scale(1);
+  }
+
+
+
+  50% {
+    transform: scale(0.5);
+  }
+
+  80% {
+    transform: scale(0.6);
+  }
+
+  90% {
+    transform: scale(0.8);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }

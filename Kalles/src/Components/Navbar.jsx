@@ -1,3 +1,4 @@
+import { hover } from 'framer-motion';
 import React, { useState } from 'react'
 
 export const Navbar = () => {
@@ -5,6 +6,7 @@ export const Navbar = () => {
     const [isClose, setIsClose] = useState(false);
 
     const hoverEffect = "hover:text-[#56cfe1] cursor-pointer transition duration-300"
+    const hoverScaleEffect = "hover:text-[#56cfe1] hover:scale-115 transform  cursor-pointer transition duration-300"
 
     return (
         <nav className='navbar-container'>
@@ -46,41 +48,50 @@ export const Navbar = () => {
                         <span className='text-[#ec0101] px-1'>
                             50%!
                         </span>
-                        <span className='text-[#000]'>
+                        <span className={`text-[#000] ${hoverEffect}`}>
                             Shop Now
                         </span>
                     </span>
                 </div>
                 <div className="flex gap-3">
-                    <span>
+                    <div>
                         <i className="bi bi-geo-alt mr-2"></i>
-                        Location
-                    </span>
-                    <span>
-                        English
+
+                        <span className={hoverEffect}>
+                            Location
+                        </span>
+                    </div>
+                    <div>
+
+                        <span className={hoverEffect}>
+                            English
+                        </span>
                         <i className="bi bi-chevron-down ml-2"></i>
-                    </span>
-                    <span>
-                        USD
+                    </div>
+                    <div>
+
+                        <span className={hoverEffect}>
+                            USD
+                        </span>
                         <i className="bi bi-chevron-down ml-2"></i>
-                    </span>
+                    </div>
                 </div>
             </div>
             <div className="main-nav py-3 px-5 flex justify-between items-center">
                 <h1 className="logo bold text-[2rem]">kalles</h1>
                 <div className="nav-links text-sm flex items-center gap-8">
-                    <span>Shop</span>
-                    <span>Product</span>
-                    <span>Sale</span>
-                    <span>Pages</span>
-                    <span>Lookbook</span>
-                    <span>Blog</span>
+                    <span className={hoverEffect}>Shop</span>
+                    <span className={hoverEffect}>Product</span>
+                    <span className={hoverEffect}>Sale</span>
+                    <span className={hoverEffect}>Pages</span>
+                    <span className={hoverEffect}>Lookbook</span>
+                    <span className={hoverEffect}>Blog</span>
                 </div>
                 <div className="user-nav flex items-center gap-4 text-xl">
-                    <i className='bi bi-search'></i>
-                    <i className='bi bi-person text-2xl'></i>
-                    <i className='bi bi-suit-heart'></i>
-                    <i className='bi bi-cart'></i>
+                    <i className={`bi bi-search ${hoverScaleEffect}`}></i>
+                    <i className={`bi bi-person text-2xl ${hoverScaleEffect}`}></i>
+                    <i className={`bi bi-suit-heart ${hoverScaleEffect}`}></i>
+                    <i className={`bi bi-cart ${hoverScaleEffect}`}></i>
                 </div>
             </div>
         </nav>

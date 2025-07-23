@@ -1,28 +1,28 @@
 import React, { useState } from 'react';
-import trending from "../jsonFiles/trendingCards.json";
+import BestSeller from "../jsonFiles/BestSellersCards.json";
 import { motion } from 'framer-motion';
 
-export const TrendingCards = () => {
+export const BestSellers = () => {
     const [hoverIndex, setHoverIndex] = useState(null);
 
     return (
-        <div className="trending flex flex-col items-center gap-8 px-10 py-10 overflow-hidden">
+        <div className="BestSeller flex flex-col items-center gap-8 px-10 py-10 overflow-hidden">
             <div className='flex flex-col items-center gap-1'>
 
                 <div className="flex items-center gap-3">
                     <div className="w-20 h-0.5 bg-[#000]"></div>
-                    <span className='uppercase bold text-2xl'>Trending</span>
+                    <span className='uppercase bold text-2xl'>Best Seller</span>
                     <div className="w-20 h-0.5 bg-[#000]"></div>
                 </div>
                 <span className='italic'>Top view in this week</span>
             </div>
 
-            <div className="trending-cards flex gap-5 flex-wrap cursor-pointer items-center justify-center">
+            <div className="BestSeller-cards flex gap-5 flex-wrap cursor-pointer items-center justify-center">
                 {
-                    trending.map((item, index) => (
+                    BestSeller.map((item, index) => (
                         <div
                             key={index}
-                            className='trending-card flex flex-col gap-3'
+                            className='BestSellers-card flex flex-col gap-3'
                             onMouseEnter={() => setHoverIndex(index)}
                             onMouseLeave={() => setHoverIndex(null)}
                         >
@@ -111,7 +111,7 @@ export const TrendingCards = () => {
                                 </motion.div>
                             </motion.div>
 
-                            <div className="trending-detail">
+                            <div className="trendingBestSellers-detail">
                                 <h1 className='medium'>{item.title}</h1>
                                 <span className='text-[#696969]'>${item.price}.00</span>
                             </div>
