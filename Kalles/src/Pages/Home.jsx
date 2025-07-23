@@ -1,8 +1,14 @@
 import React, { useState } from 'react'
+import { motion } from 'framer-motion'
+
+import { TrendingCards } from '../Components/TrendingCards';
+import { BestSellers } from '../Components/BestSellers';
+import { BlogsCards } from '../Components/BlogsCards';
 
 export const Home = () => {
 
     const [activeSlide, setActiveSlide] = useState(0);
+
 
     const slides = [
         <div className="slide-1 flex items-center" style={{
@@ -41,7 +47,33 @@ export const Home = () => {
                 <button className='bg-[#000] w-fit text-[#fff] medium px-6 py-3'>Explore Now</button>
             </div>
         </div>
+    ];
+
+    const infoData = [
+        {
+            icon: "bi bi-car-front",
+            info: "FREE SHIPPING",
+            desc: "Free shipping on all US order or order above $100",
+        },
+        {
+            icon: "bi bi-pie-chart",
+            info: "SUPPORT 24/7",
+            desc: "Contact us 24 hours a day, 7 days a week",
+        },
+        {
+            icon: "bi bi-arrow-repeat",
+            info: "30 DAYS RETURN",
+            desc: "Simply return it within 30 days for an exchange.",
+        },
+        {
+            icon: "bi bi-shield-lock",
+            info: "100% PAYMENT SECURE",
+            desc: "We ensure secure payment with PEV",
+        },
     ]
+
+
+
 
     return (
         <div className="home-container">
@@ -85,92 +117,74 @@ export const Home = () => {
                     <button className='bg-[#fff] w-fit text-[#000] medium px-6 py-3 absolute bottom-5 text-sm'>Women</button>
                 </div>
             </div>
-            <div className="trending flex flex-col items-center gap-1 px-10">
-                <div className="flex items-center gap-3">
-                    <div className="w-20 h-0.5 bg-[#000]"></div>
-                    <span className='uppercase bold text-2xl'>Trending</span>
-                    <div className="w-20 h-0.5 bg-[#000]"></div>
+            <TrendingCards />
+            <div className='relative w-full px-10 py-10 flex gap-5'>
+                <div className='relative flex items-center justify-center overflow-hidden'>
+                    <img src="/images/home/img-1.jpg" className='transfrom hover:scale-150 hover:rotate-12 transition duration-1000' alt="" />
+                    <div className='medium absolute flex flex-col text-center text-[#fff] leading-5'>
+                        <h1 className=' text-3xl'>LOOKBOOK 2023</h1>
+                        <span>MAKE LOVE THIS LOOK</span>
+                    </div>
                 </div>
-                <span className='italic'>Top view in this week</span>
-                <div className="trending-cards flex gap-5 flex-wrap">
-                    <div className='trending-card'>
-                        <div className='group relative'>
-                            <img src="/images/home/trending-1.webp" className="h-[350px] group-hover:opacity-0" alt="" />
-                            <img src="/images/home/trending-1.webp" className="absolute top-0 left-0 h-[350px] opacity-0 group-hover:opacity-100" alt="" />
-                        </div>
-                        <div className="trending-detail">
-                            <h1>
-                                Title
-                            </h1>
-                            <span className='text-[#696969]'>Price</span>
-                        </div>
-                    </div>
-                    <div className='trending-card'>
-                        <img src="/images/home/trending-1.webp" className="h-[350px]" alt="" />
-                        <div className="trending-detail">
-                            <h1>
-                                Title
-                            </h1>
-                            <span className='text-[#696969]'>Price</span>
-                        </div>
-                    </div>
-                    <div className='trending-card'>
-                        <img src="/images/home/trending-1.webp" className="h-[350px]" alt="" />
-                        <div className="trending-detail">
-                            <h1>
-                                Title
-                            </h1>
-                            <span className='text-[#696969]'>Price</span>
-                        </div>
-                    </div>
-                    <div className='trending-card'>
-                        <img src="/images/home/trending-1.webp" className="h-[350px]" alt="" />
-                        <div className="trending-detail">
-                            <h1>
-                                Title
-                            </h1>
-                            <span className='text-[#696969]'>Price</span>
-                        </div>
-                    </div>
-                    <div className='trending-card'>
-                        <img src="/images/home/trending-1.webp" className="h-[350px]" alt="" />
-                        <div className="trending-detail">
-                            <h1>
-                                Title
-                            </h1>
-                            <span className='text-[#696969]'>Price</span>
-                        </div>
-                    </div>
-                    <div className='trending-card'>
-                        <img src="/images/home/trending-1.webp" className="h-[350px]" alt="" />
-                        <div className="trending-detail">
-                            <h1>
-                                Title
-                            </h1>
-                            <span className='text-[#696969]'>Price</span>
-                        </div>
-                    </div>
-                    <div className='trending-card'>
-                        <img src="/images/home/trending-1.webp" className="h-[350px]" alt="" />
-                        <div className="trending-detail">
-                            <h1>
-                                Title
-                            </h1>
-                            <span className='text-[#696969]'>Price</span>
-                        </div>
-                    </div>
-                    <div className='trending-card'>
-                        <img src="/images/home/trending-1.webp" className="h-[350px]" alt="" />
-                        <div className="trending-detail">
-                            <h1>
-                                Title
-                            </h1>
-                            <span className='text-[#696969]'>Price</span>
-                        </div>
+                <div className='relative flex items-center justify-center overflow-hidden'>
+                    <img src="/images/home/img-2.jpg" className='transfrom scale-120 hover:-translate-y-8 bg-repeat transition duration-500' alt="" />
+                    <div className='medium absolute flex flex-col text-center text-[#fff] leading-5'>
+                        <span>SUMMER SALE</span>
+                        <h1 className=' bold text-5xl'>UP TO 70% </h1>
                     </div>
                 </div>
             </div>
-        </div>
+            <BestSellers />
+            <BlogsCards />
+            <div className="insta w-full h-screen flex gap-5 flex-col py-10">
+                <div className="flex justify-center items-center gap-3">
+                    <div className="w-20 h-0.5 bg-[#000]"></div>
+                    <span className='uppercase bold text-2xl'>@ FOLLOW US ON INSTAGRAM</span>
+                    <div className="w-20 h-0.5 bg-[#000]"></div>
+                </div>
+                <div className="insta-cards flex flex-col">
+                    <div className='flex flex-wrap'>
+                        <div className='w-[210px] h-[210px] bg-red-500 group overflow-hidden cursor-pointer'>
+                            <img src="/images/home/insta-1.webp" className='group-hover:scale-105 transform transition duration-300' alt="" />
+                        </div>
+                        <div className='w-[210px] h-[210px] bg-yellow-500 group overflow-hidden cursor-pointer'>
+                            <img src="/images/home/insta-2.jpg" className='group-hover:scale-105 transform transition duration-300' alt="" />
+                        </div>
+                        <div className='w-[210px] h-[210px] bg-red-500 group overflow-hidden cursor-pointer'>
+                            <img src="/images/home/insta-3.webp" className='group-hover:scale-105 transform transition duration-300' alt="" />
+                        </div>
+                        <div className='w-[210px] h-[210px] bg-purple-500 group overflow-hidden cursor-pointer'>
+                            <img src="/images/home/insta-1.webp" className='group-hover:scale-105 transform transition duration-300' alt="" />
+                        </div>
+                        <div className='w-[210px] h-[210px] bg-yellow-500 group overflow-hidden cursor-pointer'>
+                            <img src="/images/home/insta-2.jpg" className='group-hover:scale-105 transform transition duration-300' alt="" />
+                        </div>
+                        <div className='w-[210px] h-[210px] bg-red-500 group overflow-hidden cursor-pointer'>
+                            <img src="/images/home/insta-3.webp" className='group-hover:scale-105 transform transition duration-300' alt="" />
+                        </div>
+                    </div>
+                </div>
+                <div className="info-cards flex gap-10 py-10 px-10 bgred-600">
+
+                    {
+                        infoData.map((info, index) => (
+                            <div key={index} className="info-card flex gap-5">
+                                <i className={`${info.icon} bounce-btn text-3xl text-[#878787]`}></i>
+
+                                <div className='flex flex-col gap-1'>
+                                    <span className='medium'>{info.info}</span>
+                                    <span className='text-sm text-[#878787]'>{info.desc}</span>
+                                </div>
+                            </div>
+                        ))
+                    }
+
+
+
+
+                </div>
+            </div>
+        </div >
     )
 }
 
