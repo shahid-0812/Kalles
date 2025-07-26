@@ -11,37 +11,37 @@ export const Home = () => {
 
 
     const slides = [
-        <div className="slide-1 flex items-center" style={{
+        <div className="slide-1  flex items-center" style={{
             backgroundImage: `url('./images/home/slider-01.jpg')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             height: '100vh',
         }}>
-            <div className="titles leading-none mx-12 flex flex-col gap-2">
+            <div className="titles leading-none px-[10%] flex flex-col gap-2 max-w-screen-xl">
                 <span className='medium text-[1.35rem]'>SUMMER 2023</span>
                 <h1 className='bold text-[3rem]'>New Arrival Collection</h1>
                 <button className='bg-[#000] w-fit text-[#fff] medium px-6 py-3'>Explore Now</button>
             </div>
         </div>,
-        <div className="slide-1 flex items-center justify-end" style={{
+        <div className="slide-1  flex items-center justify-end" style={{
             backgroundImage: `url('./images/home/slider-02.jpg')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             height: '100vh',
         }}>
-            <div className="titles leading-none mx-12 flex flex-col gap-2">
+            <div className="titles leading-none px-[10%] flex flex-col gap-2 max-w-screen-xl">
                 <span className='medium text-[1.35rem]'>New Season</span>
                 <h1 className='bold text-[3rem]'>Lookbook Collection</h1>
                 <button className='bg-[#000] w-fit text-[#fff] medium px-6 py-3'>Explore Now</button>
             </div>
         </div>,
-        <div className="slide-1 flex items-center" style={{
+        <div className="slide-1  flex items-center" style={{
             backgroundImage: `url('./images/home/slider-03.jpg')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             height: '100vh',
         }}>
-            <div className="titles leading-none mx-12 flex flex-col gap-2">
+            <div className="titles leading-none px-[10%] flex flex-col gap-2 max-w-screen-xl">
                 <span className='medium text-[1.35rem]'>SUMMER 2023</span>
                 <h1 className='bold text-[3rem]'>New Arrival Collection</h1>
                 <button className='bg-[#000] w-fit text-[#fff] medium px-6 py-3'>Explore Now</button>
@@ -76,14 +76,14 @@ export const Home = () => {
 
 
     return (
-        <div className="home-container">
+        <div className="home-container ">
             <div className="hero-section w-full h-full overflow-hidden">
-                <div className="slider flex transition-transform duration-500"
+                <div className="slider flex transition-transform duration-500 "
                     style={{ transform: `translateX(-${activeSlide * 100}%)` }}>
 
 
                     {slides.map((slide, index) => (
-                        <div key={index} className="min-w-full">{slide}</div>
+                        <div key={index} className="min-w-full ">{slide}</div>
                     ))}
                 </div>
                 <div className="flex justify-center my-4 gap-2">
@@ -96,29 +96,29 @@ export const Home = () => {
                     ))}
                 </div>
             </div>
-            <div className="home-grid px-10 w-full h-[500px] flex gap-8 py-15">
+            <div className="home-grid max-w-screen-xl mx-auto px-10 w-full flex gap-8 py-15 h-[800px]">
+                <div className='grid-1 relative flex justify-center  h-full flex-1 w-full group overflow-hidden cursor-pointer'>
+                    <img src="/images/home/grid-1.jpg" className="w-full h-full object-cover transform group-hover:scale-105 transition duration-300" alt="" />
+                    <button className='bg-[#fff] w-fit text-[#000] medium px-6 py-3 absolute bottom-5 text-sm hover:text-[#fff] hover:bg-[#000] transition duration-300 cursor-pointer'>Women</button>
+                </div>
+                <div className="grid-2 flex flex-col gap-8 flex-1 w-1/3 ">
+                    <div className="relative flex justify-center bg-center group overflow-hidden cursor-pointer">
+                        <img src="/images/home/grid-2-1.jpg" className="w-full h-full object-cover transform group-hover:scale-105 transition duration-300" alt="" />
+                        <button className='bg-[#fff] w-fit text-[#000] medium px-6 py-3 absolute bottom-5 text-sm hover:text-[#fff] hover:bg-[#000] transition duration-300 cursor-pointer'>Accessories</button>
+                    </div>
+                    <div className="relative flex justify-center overflow-hidden cursor-pointer group">
+                        <img src="/images/home/grid-2-2.jpg" className="w-full h-full object-cover bg-center transform group-hover:scale-105 transition duration-300" alt="" />
 
-                <div className='relative flex justify-center flex-1 h-full'>
-                    <img src="/images/home/grid-1.jpg" className="w-full h-full object-cover" alt="" />
-                    <button className='bg-[#fff] w-fit text-[#000] medium px-6 py-3 absolute bottom-5 text-sm'>Women</button>
-                </div>
-                <div className="flex flex-col gap-8 flex-1">
-                    <div className="relative flex justify-center flex-1 h-1/2 bg-center">
-                        <img src="/images/home/grid-2-1.jpg" className="w-full h-full object-cover bg-center" alt="" />
-                        <button className='bg-[#fff] w-fit text-[#000] medium px-6 py-3 absolute bottom-5 text-sm'>Accessories</button>
-                    </div>
-                    <div className="relative flex justify-center flex-1 h-1/2 overflow-hidden">
-                        <img src="/images/home/grid-2-2.jpg" className="w-full h-full  object-cover " alt="" />
-                        <button className='bg-[#fff] w-fit text-[#000] medium px-6 py-3 absolute bottom-5 text-sm'>Footwear</button>
+                        <button className='bg-[#fff] w-fit text-[#000] medium px-6 py-3 absolute bottom-5 text-sm hover:text-[#fff] hover:bg-[#000] transition duration-300 cursor-pointer'>Footwear</button>
                     </div>
                 </div>
-                <div className='relative flex justify-center flex-1 h-full'>
-                    <img src="/images/home/grid-3.jpg" className="w-full h-full object-cover" alt="" />
-                    <button className='bg-[#fff] w-fit text-[#000] medium px-6 py-3 absolute bottom-5 text-sm'>Women</button>
+                <div className='grid-3 relative flex justify-center h-full flex-1 w-1/2 group overflow-hidden cursor-pointer'>
+                    <img src="/images/home/grid-3.jpg" className="w-full h-full object-cover transform group-hover:scale-105 transition duration-300" alt="" />
+                    <button className='bg-[#fff] w-fit text-[#000] medium px-6 py-3 absolute bottom-5 text-sm hover:text-[#fff] hover:bg-[#000] transition duration-300 cursor-pointer'>Women</button>
                 </div>
             </div>
             <TrendingCards />
-            <div className='relative w-full px-10 py-10 flex gap-5'>
+            <div className='relative w-full px-10 py-10 flex gap-5 items-center justify-center max-w-screen-xl mx-auto'>
                 <div className='relative flex items-center justify-center overflow-hidden'>
                     <img src="/images/home/img-1.jpg" className='transfrom hover:scale-150 hover:rotate-12 transition duration-1000' alt="" />
                     <div className='medium absolute flex flex-col text-center text-[#fff] leading-5'>
@@ -136,7 +136,7 @@ export const Home = () => {
             </div>
             <BestSellers />
             <BlogsCards />
-            <div className="insta w-full h-screen flex gap-5 flex-col py-10">
+            <div className="insta w-full flex gap-5 flex-col py-10">
                 <div className="flex justify-center items-center gap-3">
                     <div className="w-20 h-0.5 bg-[#000]"></div>
                     <span className='uppercase bold text-2xl'>@ FOLLOW US ON INSTAGRAM</span>
@@ -144,27 +144,27 @@ export const Home = () => {
                 </div>
                 <div className="insta-cards flex flex-col">
                     <div className='flex flex-wrap'>
-                        <div className='w-[210px] h-[210px] bg-red-500 group overflow-hidden cursor-pointer'>
-                            <img src="/images/home/insta-1.webp" className='group-hover:scale-105 transform transition duration-300' alt="" />
+                        <div className='bg-red-500 group overflow-hidden  w-[16.66%] cursor-pointer'>
+                            <img src="/images/home/insta-1.webp" className=' group-hover:scale-105 transform transition duration-300' alt="" />
                         </div>
-                        <div className='w-[210px] h-[210px] bg-yellow-500 group overflow-hidden cursor-pointer'>
-                            <img src="/images/home/insta-2.jpg" className='group-hover:scale-105 transform transition duration-300' alt="" />
+                        <div className='bg-yellow-500 group overflow-hidden  w-[16.66%] cursor-pointer'>
+                            <img src="/images/home/insta-2.jpg" className=' group-hover:scale-105 transform transition duration-300' alt="" />
                         </div>
-                        <div className='w-[210px] h-[210px] bg-red-500 group overflow-hidden cursor-pointer'>
-                            <img src="/images/home/insta-3.webp" className='group-hover:scale-105 transform transition duration-300' alt="" />
+                        <div className='bg-red-500 group overflow-hidden  w-[16.66%] cursor-pointer'>
+                            <img src="/images/home/insta-3.webp" className=' group-hover:scale-105 transform transition duration-300' alt="" />
                         </div>
-                        <div className='w-[210px] h-[210px] bg-purple-500 group overflow-hidden cursor-pointer'>
-                            <img src="/images/home/insta-1.webp" className='group-hover:scale-105 transform transition duration-300' alt="" />
+                        <div className='bg-purple-500 group overflow-hidden w-[16.66%] cursor-pointer'>
+                            <img src="/images/home/insta-1.webp" className=' group-hover:scale-105 transform transition duration-300' alt="" />
                         </div>
-                        <div className='w-[210px] h-[210px] bg-yellow-500 group overflow-hidden cursor-pointer'>
-                            <img src="/images/home/insta-2.jpg" className='group-hover:scale-105 transform transition duration-300' alt="" />
+                        <div className='bg-yellow-500 group overflow-hidden w-[16.66%] cursor-pointer'>
+                            <img src="/images/home/insta-2.jpg" className=' group-hover:scale-105 transform transition duration-300' alt="" />
                         </div>
-                        <div className='w-[210px] h-[210px] bg-red-500 group overflow-hidden cursor-pointer'>
-                            <img src="/images/home/insta-3.webp" className='group-hover:scale-105 transform transition duration-300' alt="" />
+                        <div className='bg-red-500 group overflow-hidden w-[16.66%] cursor-pointer'>
+                            <img src="/images/home/insta-3.webp" className=' group-hover:scale-105 transform transition duration-300' alt="" />
                         </div>
                     </div>
                 </div>
-                <div className="info-cards flex gap-10 py-10 px-10 bgred-600">
+                <div className="info-cards flex gap-10 py-10 px-10 justify-center bgred-600">
 
                     {
                         infoData.map((info, index) => (

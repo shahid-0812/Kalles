@@ -6,7 +6,7 @@ export const TrendingCards = () => {
     const [hoverIndex, setHoverIndex] = useState(null);
 
     return (
-        <div className="trending flex flex-col items-center gap-8 px-10 py-10 overflow-hidden">
+        <div className="trending flex flex-col items-center gap-8 px-10 py-10 overflow-hidden max-w-screen-xl mx-auto">
             <div className='flex flex-col items-center gap-1'>
 
                 <div className="flex items-center gap-3">
@@ -123,8 +123,21 @@ export const TrendingCards = () => {
                 <span className='z-10 relative group-hover:text-[#fff] transition duration-300'>
                     Load More
                 </span>
-            </button>
 
+
+            </button>
+            <div className='w-full p-10 bg-red-500'>
+
+                <button className="relative w-40 h-12 px-6 rounded-full bg-white overflow-hidden group">
+                    <span className="absolute inset-0 flex items-center justify-center transition-all duration-300 group-hover:-translate-y-8">
+                        Quick View
+                    </span>
+                    <i className="bi bi-eye absolute inset-0 flex items-center justify-center translate-y-8 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"></i>
+                </button>
+
+
+
+            </div>
         </div>
     );
 };

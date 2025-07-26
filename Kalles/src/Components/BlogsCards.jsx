@@ -23,7 +23,7 @@ export const BlogsCards = () => {
         },
     ];
     return (
-        <div className=" cursor-pointer blogs flex items-center justify-center flex-wrap gap-5 px-10 py-10 ">
+        <div className=" cursor-pointer blogs flex items-center justify-center flex-wrap gap-5 px-10 py-10 max-w-screen-xl mx-auto">
             {
                 BlogCards.map((blog, index) => (
                     <div className='flex flex-col gap-3 w-[380px] group '>
