@@ -6,7 +6,7 @@ export const BestSellers = () => {
     const [hoverIndex, setHoverIndex] = useState(null);
 
     return (
-        <div className="BestSeller flex flex-col items-center gap-8 px-10 py-10 overflow-hidden">
+        <div className="BestSeller flex flex-col items-center gap-8 px-10 py-10 overflow-hidden max-w-screen-xl mx-auto">
             <div className='flex flex-col items-center gap-1'>
 
                 <div className="flex items-center gap-3">

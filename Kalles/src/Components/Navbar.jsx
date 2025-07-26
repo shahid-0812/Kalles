@@ -1,9 +1,38 @@
 import { hover } from 'framer-motion';
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 
 export const Navbar = () => {
 
     const [isClose, setIsClose] = useState(false);
+    const [isCountry, setshowCountry] = useState(false);
+
+    const Country = [
+        {
+            flag: "fi fi-us",
+            name: "Usa",
+        },
+        {
+            flag: "fi fi-ca",
+            name: "Canada",
+        },
+        {
+            flag: "fi fi-de",
+            name: "Germany",
+        },
+        {
+            flag: "fi fi-jp",
+            name: "Japan",
+        },
+        {
+            flag: "fi fi-nz",
+            name: "New Zealand",
+        },
+        {
+            flag: "fi fi-gb",
+            name: "United Kingdom",
+        },
+    ]
 
     const hoverEffect = "hover:text-[#56cfe1] cursor-pointer transition duration-300"
     const hoverScaleEffect = "hover:text-[#56cfe1] hover:scale-115 transform  cursor-pointer transition duration-300"
@@ -68,24 +97,35 @@ export const Navbar = () => {
                         </span>
                         <i className="bi bi-chevron-down ml-2"></i>
                     </div>
-                    <div>
-
+                    <div className='relative' onClick={() => setshowCountry(!isCountry)}>
                         <span className={hoverEffect}>
-                            USD
+                            {Country.name}
                         </span>
                         <i className="bi bi-chevron-down ml-2"></i>
+                        {isCountry &&
+                            <ul className='absolute -left-10 top-10'>
+                                {
+                                    Country.map((country, index) => (
+                                        <li key={index}>
+                                            <span className={country.flag}></span>
+                                            <span>{country.name}</span>
+                                        </li>
+                                    ))
+                                }
+                            </ul>
+                        }
                     </div>
                 </div>
             </div>
             <div className="main-nav py-3 px-5 flex justify-between items-center">
                 <h1 className="logo bold text-[2rem]">kalles</h1>
                 <div className="nav-links text-sm flex items-center gap-8">
-                    <span className={hoverEffect}>Shop</span>
-                    <span className={hoverEffect}>Product</span>
-                    <span className={hoverEffect}>Sale</span>
-                    <span className={hoverEffect}>Pages</span>
-                    <span className={hoverEffect}>Lookbook</span>
-                    <span className={hoverEffect}>Blog</span>
+                    <Link to="/" className={hoverEffect}>Home</Link>
+                    <Link to="/shop" className={hoverEffect}>Shop</Link>
+                    <Link to="/" className={hoverEffect}>Sale</Link>
+                    <Link to="/" className={hoverEffect}>Pages</Link>
+                    <Link to="/" className={hoverEffect}>Lookbook</Link>
+                    <Link to="/blog" className={hoverEffect}>Blog</Link>
                 </div>
                 <div className="user-nav flex items-center gap-4 text-xl">
                     <i className={`bi bi-search ${hoverScaleEffect}`}></i>

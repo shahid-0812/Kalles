@@ -15,7 +15,7 @@ export const TrendingCards = () => {
                     <div className="w-20 h-0.5 bg-[#000]"></div>
                 </div>
                 <span className='italic'>Top view in this week</span>
-            </div>
+            </div>  
 
             <div className="trending-cards flex gap-5 flex-wrap cursor-pointer items-center justify-center">
                 {
