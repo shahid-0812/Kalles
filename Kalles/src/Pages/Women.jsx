@@ -46,7 +46,7 @@ export const Women = () => {
                 }} className='bg-header flex items-center justify-center'>
                 <h1 className='text-[#fff] z-10 text-xl medium'>Collection</h1>
             </div>
-            <div className="products flex gap-8 flex-col px-10 py-10">
+            <div className="products flex gap-8 flex-col px-10 py-10 max-w-screen-xl mx-auto">
                 <div className="product-nav flex items-center justify-between">
                     <div className='text-sm flex gap-2 text-[#878787]'>
                         <i className='bi bi-funnel'></i>

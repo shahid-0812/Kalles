@@ -56,8 +56,8 @@ export const Navbar = () => {
                     </span>
                 </div>
             )}
-            <div className="row-2 bg-[#f6f6f8] text-[#878787] py-4 px-4 text-xs regular flex justify-between">
-                <div className="contacts  flex gap-3">
+            <div className="row-2 bg-[#f6f6f8] text-[#878787] py-4 px-4 text-xs regular flex justify-between items-center">
+                <div className="contacts flex gap-3">
                     <div>
                         <i className="bi bi-telephone mr-2"></i>
                         <span className={hoverEffect}>
@@ -98,7 +98,9 @@ export const Navbar = () => {
                         <i className="bi bi-chevron-down ml-2"></i>
                     </div>
                     <div className='relative' onClick={() => setshowCountry(!isCountry)}>
+                        <span className='fi fi-us'></span>
                         <span className={hoverEffect}>
+
                             {Country.name}
                         </span>
                         <i className="bi bi-chevron-down ml-2"></i>

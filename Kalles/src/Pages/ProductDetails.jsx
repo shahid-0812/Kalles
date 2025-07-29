@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { GlassMagnifier } from 'react-image-magnifiers';
 
 
 export const ProductDetails = () => {
@@ -18,14 +17,7 @@ export const ProductDetails = () => {
                 </div>
 
                 <div className=''>
-                    <GlassMagnifier
-                        imageSrc="/images/men/pro-1.webp"
-                        largeImageSrc="/images/men/pro-1-1.webp"
-                        imageAlt="Product"
-                        magnifierSize="30%" // or a number like 200
-                        className="w-[400px] h-auto"
-                    />
-                    {/* <img src="/images/men/pro-1.webp" className='w-[800px] h-auto' alt="" /> */}
+                    <img src="/images/men/pro-1.webp" className='w-[800px] h-auto' alt="" />
                 </div>
 
                 <div className='flex flex-col gap-5 px-5'>

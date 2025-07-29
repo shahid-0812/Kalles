@@ -15,7 +15,7 @@ export const TrendingCards = () => {
                     <div className="w-20 h-0.5 bg-[#000]"></div>
                 </div>
                 <span className='italic'>Top view in this week</span>
-            </div>  
+            </div>
 
             <div className="trending-cards flex gap-5 flex-wrap cursor-pointer items-center justify-center">
                 {
@@ -75,14 +75,14 @@ export const TrendingCards = () => {
                                             initial="rest"
                                             animate={hoverIndex === index ? "hover" : "rest"}
                                             transition={{ duration: 0.3 }}
-                                            className="bi bi-suit-heart"
+                                            className="bi bi-suit-heart hover:scale-115 hover:text-[#000] transition-transform duration-200"
                                         ></motion.i>
                                         <motion.i
                                             variants={{ rest: { x: -100 }, hover: { x: 0 } }}
                                             initial="rest"
                                             animate={hoverIndex === index ? "hover" : "rest"}
                                             transition={{ duration: 0.3, delay: 0.2 }}
-                                            className="bi bi-arrow-left-right"
+                                            className="bi bi-arrow-left-right hover:scale-115 hover:text-[#000] transition-transform duration-200"
                                         ></motion.i>
                                     </motion.div>
 
@@ -93,8 +93,18 @@ export const TrendingCards = () => {
                                         transition={{ duration: 0.3 }}
                                         className="trending-buttons flex flex-col gap-2 m-auto"
                                     >
-                                        <button className='bg-[#fff] flex-1 h-12 rounded-full px-6 py-3 text-sm'>Quick view</button>
-                                        <button className='bg-[#fff] flex-1 h-12 rounded-full px-6 py-3 text-sm'>Quick shop</button>
+                                        <button className="relative w-40 h-12 px-6 text-sm rounded-full bg-white hover:bg-[#000] overflow-hidden cursor-pointer group transition-all duration-300">
+                                            <span className="absolute inset-0 flex items-center justify-center transition-all duration-300 group-hover:-translate-y-8">
+                                                Quick View
+                                            </span>
+                                            <i className="bi bi-eye absolute inset-0 flex items-center justify-center translate-y-8 opacity-0 transition-all duration-300 text-lg group-hover:text-[#fff] group-hover:translate-y-0 group-hover:opacity-100"></i>
+                                        </button>
+                                        <button className="relative w-40 h-12 px-6 text-sm rounded-full bg-white hover:bg-[#000] overflow-hidden cursor-pointer group transition-all duration-300">
+                                            <span className="absolute inset-0 flex items-center justify-center transition-all duration-300 group-hover:-translate-y-8">
+                                                Quick shop
+                                            </span>
+                                            <i className="bi bi-eye absolute inset-0 flex items-center justify-center translate-y-8 opacity-0 transition-all duration-300 text-lg group-hover:text-[#fff] group-hover:translate-y-0 group-hover:opacity-100"></i>
+                                        </button>
                                     </motion.div>
 
                                     <motion.div
@@ -126,18 +136,7 @@ export const TrendingCards = () => {
 
 
             </button>
-            <div className='w-full p-10 bg-red-500'>
 
-                <button className="relative w-40 h-12 px-6 rounded-full bg-white overflow-hidden group">
-                    <span className="absolute inset-0 flex items-center justify-center transition-all duration-300 group-hover:-translate-y-8">
-                        Quick View
-                    </span>
-                    <i className="bi bi-eye absolute inset-0 flex items-center justify-center translate-y-8 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"></i>
-                </button>
-
-
-
-            </div>
         </div>
     );
 };
