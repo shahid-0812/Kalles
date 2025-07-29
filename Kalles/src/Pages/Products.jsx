@@ -7,7 +7,7 @@ import { Heart } from '../Elements/Heart';
 import { QuickView } from '../Components/QuickView';
 
 
-export const Women = () => {
+export const Products = () => {
     const [quantity, setQuantity] = useState(0);
     const [hoverIndex, setHoverIndex] = useState(null);
     const [quickView, setQuickView] = useState(false);
@@ -16,33 +16,33 @@ export const Women = () => {
 
     const WomenProducts = [
         {
-            img: "/images/women/pro-1.webp",
-            img2: "/images/women/pro-1-1.webp",
+            img: "/images/products/pro-1.webp",
+            img2: "/images/products/pro-1-1.webp",
         },
         {
-            img: "/images/women/pro-1.webp",
-            img2: "/images/women/pro-1-1.webp",
+            img: "/images/products/pro-1.webp",
+            img2: "/images/products/pro-1-1.webp",
         },
         {
-            img: "/images/women/pro-1.webp",
-            img2: "/images/women/pro-1-1.webp",
+            img: "/images/products/pro-1.webp",
+            img2: "/images/products/pro-1-1.webp",
         },
         {
-            img: "/images/women/pro-1.webp",
-            img2: "/images/women/pro-1-1.webp",
+            img: "/images/products/pro-1.webp",
+            img2: "/images/products/pro-1-1.webp",
         },
         {
-            img: "/images/women/pro-1.webp",
-            img2: "/images/women/pro-1-1.webp",
+            img: "/images/products/pro-1.webp",
+            img2: "/images/products/pro-1-1.webp",
         },
         {
-            img: "/images/women/pro-1.webp",
-            img2: "/images/women/pro-1-1.webp",
+            img: "/images/products/pro-1.webp",
+            img2: "/images/products/pro-1-1.webp",
         },
     ];
 
     return (
-        <div className='women-container'>
+        <div className='products-container'>
             <CatNav />
             {quickView && (
                 <div className="fixed inset-0 flex items-center justify-center z-50 bg-black/30">
@@ -94,7 +94,7 @@ export const Women = () => {
 
                                         <motion.img
                                             src={item.img2}
-                                            className="h-[300px] absolute top-0 left-0 object-cover opacity-0 group-hover:opacity-100 transition duration-700 group-hover:scale-105"
+                                            className="h-[200px] absolute top-0 left-0 object-cover opacity-0 group-hover:opacity-100 transition duration-700 group-hover:scale-105"
                                             alt=""
 
                                         />
@@ -103,9 +103,8 @@ export const Women = () => {
 
                                         <motion.img
                                             src={item.img}
-                                            className="h-[300px]   object-cover opacity-100 group-hover:opacity-0 transition duration-300"
+                                            className="h-[200px]   object-cover opacity-100 group-hover:opacity-0 transition duration-300"
                                             alt=""
-
                                         />
 
                                         <motion.div className='flex absolute flex-col top-0 left-0 text-[#fff] text-lg mx-3 my-2'>

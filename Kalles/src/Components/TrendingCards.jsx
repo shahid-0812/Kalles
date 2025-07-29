@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import trending from "../jsonFiles/trendingCards.json";
 import { motion } from 'framer-motion';
+import { Heart } from '../Elements/Heart';
+import { Compare } from '../Elements/Compare';
 
 export const TrendingCards = () => {
     const [hoverIndex, setHoverIndex] = useState(null);
@@ -15,7 +17,7 @@ export const TrendingCards = () => {
                     <div className="w-20 h-0.5 bg-[#000]"></div>
                 </div>
                 <span className='italic'>Top view in this week</span>
-            </div>  
+            </div>
 
             <div className="trending-cards flex gap-5 flex-wrap cursor-pointer items-center justify-center">
                 {
@@ -70,20 +72,8 @@ export const TrendingCards = () => {
                                     transition={{ duration: 0.5 }}
                                 >
                                     <motion.div className='flex absolute flex-col top-0 left-0 text-[#fff] text-lg mx-3 my-2'>
-                                        <motion.i
-                                            variants={{ rest: { x: -100 }, hover: { x: 0 } }}
-                                            initial="rest"
-                                            animate={hoverIndex === index ? "hover" : "rest"}
-                                            transition={{ duration: 0.3 }}
-                                            className="bi bi-suit-heart"
-                                        ></motion.i>
-                                        <motion.i
-                                            variants={{ rest: { x: -100 }, hover: { x: 0 } }}
-                                            initial="rest"
-                                            animate={hoverIndex === index ? "hover" : "rest"}
-                                            transition={{ duration: 0.3, delay: 0.2 }}
-                                            className="bi bi-arrow-left-right"
-                                        ></motion.i>
+                                        <Compare index={index} hoverIndex={hoverIndex} />
+                                        <Heart index={index} hoverIndex={hoverIndex} />
                                     </motion.div>
 
                                     <motion.div
@@ -126,18 +116,11 @@ export const TrendingCards = () => {
 
 
             </button>
-            <div className='w-full p-10 bg-red-500'>
-
-                <button className="relative w-40 h-12 px-6 rounded-full bg-white overflow-hidden group">
-                    <span className="absolute inset-0 flex items-center justify-center transition-all duration-300 group-hover:-translate-y-8">
-                        Quick View
-                    </span>
-                    <i className="bi bi-eye absolute inset-0 flex items-center justify-center translate-y-8 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"></i>
-                </button>
-
-
-
+            <div class="tooltip">
+                ❤️
+                <div class="tooltip-text">Like</div>
             </div>
+
         </div>
     );
 };

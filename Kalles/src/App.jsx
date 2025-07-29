@@ -8,6 +8,9 @@ import { Men } from "./Pages/Men";
 import { Blog } from "./Pages/Blog";
 import { Accessories } from "./Pages/Accessories";
 import { ProductDetails } from "./Pages/ProductDetails";
+import ScrollToTop from "./Components/ScrollToTop";
+import { QuickView } from "./Components/QuickView";
+import { Products } from "./Pages/Products";
 
 
 
@@ -24,7 +27,9 @@ function App() {
           <Route path="/accessories" element={<Accessories />} />
           <Route path="/productDetails" element={<ProductDetails />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/products" element={<Products />} />
         </Routes>
+        <ScrollToTop />
         <Footer />
       </BrowserRouter>
     </>

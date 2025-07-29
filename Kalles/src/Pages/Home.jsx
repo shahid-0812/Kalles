@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 
 import { TrendingCards } from '../Components/TrendingCards';
 import { BestSellers } from '../Components/BestSellers';
@@ -20,7 +20,11 @@ export const Home = () => {
             <div className="titles leading-none px-[10%] flex flex-col gap-2 max-w-screen-xl">
                 <span className='medium text-[1.35rem]'>SUMMER 2023</span>
                 <h1 className='bold text-[3rem]'>New Arrival Collection</h1>
-                <button className='bg-[#000] w-fit text-[#fff] medium px-6 py-3'>Explore Now</button>
+                <Link to="/shop" className='slide-btn bg-[#000] w-fit text-[#fff] medium px-6 py-3'>
+                    <span>
+                        Explore Now
+                    </span>
+                </Link >
             </div>
         </div>,
         <div className="slide-1  flex items-center justify-end" style={{
@@ -32,7 +36,12 @@ export const Home = () => {
             <div className="titles leading-none px-[10%] flex flex-col gap-2 max-w-screen-xl">
                 <span className='medium text-[1.35rem]'>New Season</span>
                 <h1 className='bold text-[3rem]'>Lookbook Collection</h1>
-                <button className='bg-[#000] w-fit text-[#fff] medium px-6 py-3'>Explore Now</button>
+                <Link to="/shop" className='slide-btn bg-[#000] w-fit text-[#fff] medium px-6 py-3'>
+                    <span>
+                        Explore Now
+                    </span>
+                </Link >
+
             </div>
         </div>,
         <div className="slide-1  flex items-center" style={{
@@ -44,7 +53,12 @@ export const Home = () => {
             <div className="titles leading-none px-[10%] flex flex-col gap-2 max-w-screen-xl">
                 <span className='medium text-[1.35rem]'>SUMMER 2023</span>
                 <h1 className='bold text-[3rem]'>New Arrival Collection</h1>
-                <button className='bg-[#000] w-fit text-[#fff] medium px-6 py-3'>Explore Now</button>
+                <Link to="/shop" className='slide-btn bg-[#000] w-fit text-[#fff] medium px-6 py-3'>
+                    <span>
+                        Explore Now
+                    </span>
+                </Link >
+
             </div>
         </div>
     ];
@@ -91,7 +105,7 @@ export const Home = () => {
                         <button
                             key={index}
                             onClick={() => setActiveSlide(index)}
-                            className={`w-3 h-3 rounded-full ${activeSlide === index ? 'bg-black' : 'bg-gray-400'}`}
+                            className={`w-3 h-3 rounded-full cursor-pointer ${activeSlide === index ? 'bg-black' : 'bg-gray-400'}`}
                         ></button>
                     ))}
                 </div>

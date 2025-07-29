@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import BestSeller from "../jsonFiles/BestSellersCards.json";
 import { motion } from 'framer-motion';
+import { Compare } from '../Elements/Compare';
+import { Heart } from '../Elements/Heart';
 
 export const BestSellers = () => {
     const [hoverIndex, setHoverIndex] = useState(null);
@@ -70,20 +72,8 @@ export const BestSellers = () => {
                                     transition={{ duration: 0.5 }}
                                 >
                                     <motion.div className='flex absolute flex-col top-0 left-0 text-[#fff] text-lg mx-3 my-2'>
-                                        <motion.i
-                                            variants={{ rest: { x: -100 }, hover: { x: 0 } }}
-                                            initial="rest"
-                                            animate={hoverIndex === index ? "hover" : "rest"}
-                                            transition={{ duration: 0.3 }}
-                                            className="bi bi-suit-heart"
-                                        ></motion.i>
-                                        <motion.i
-                                            variants={{ rest: { x: -100 }, hover: { x: 0 } }}
-                                            initial="rest"
-                                            animate={hoverIndex === index ? "hover" : "rest"}
-                                            transition={{ duration: 0.3, delay: 0.2 }}
-                                            className="bi bi-arrow-left-right"
-                                        ></motion.i>
+                                        <Compare index={index} hoverIndex={hoverIndex} />
+                                        <Heart index={index} hoverIndex={hoverIndex} />
                                     </motion.div>
 
                                     <motion.div
