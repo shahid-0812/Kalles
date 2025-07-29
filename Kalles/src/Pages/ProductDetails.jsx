@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { GlassMagnifier } from 'react-image-magnifiers';
 
 
 export const ProductDetails = () => {
@@ -20,7 +19,10 @@ export const ProductDetails = () => {
                 </div>
 
                 <div className=''>
+<<<<<<< HEAD
 
+=======
+>>>>>>> f5afe155e88f559a6cea65ae1d3f56e9626bfba6
                     <img src="/images/men/pro-1.webp" className='w-[800px] h-auto' alt="" />
                 </div>
 
