@@ -11,6 +11,7 @@ import { ProductDetails } from "./Pages/ProductDetails";
 import ScrollToTop from "./Components/ScrollToTop";
 import { QuickView } from "./Components/QuickView";
 import { Products } from "./Pages/Products";
+import { BlogDetails } from "./Pages/blogDetails";
 
 
 
@@ -27,6 +28,7 @@ function App() {
           <Route path="/accessories" element={<Accessories />} />
           <Route path="/productDetails" element={<ProductDetails />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blogDetails" element={<BlogDetails />} />
           <Route path="/products" element={<Products />} />
         </Routes>
         <ScrollToTop />
