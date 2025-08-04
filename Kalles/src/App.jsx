@@ -9,31 +9,49 @@ import { Blog } from "./Pages/Blog";
 import { Accessories } from "./Pages/Accessories";
 import { ProductDetails } from "./Pages/ProductDetails";
 import ScrollToTop from "./Components/ScrollToTop";
-import { QuickView } from "./Components/QuickView";
+import { Scroll } from "./Components/Scroll";
 import { Products } from "./Pages/Products";
 import { BlogDetails } from "./Pages/blogDetails";
+import { CartProvider } from "./Components/CartContext";
+import { CartPage } from "./Pages/Cart";
+import { ComparePage } from "./Pages/ComparePage";
+import { SaleHover } from "./Components/SaleHover";
+import { NotFound } from "./Pages/NotFound";
+import { AboutUs } from "./Pages/AboutUs";
+import { ContactUs } from "./Pages/ContactUs";
 
 
 
 function App() {
   return (
     <>
+
+
       <BrowserRouter>
         <Navbar />
+        <Scroll />
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/women" element={<Women />} />
+          <Route path="/cart" element={<CartPage />} />
+          <Route path="/comparePage" element={<ComparePage />} />
+          <Route path="/aboutUS" element={<AboutUs />} />
+          <Route path="/contactUS" element={<ContactUs />} />
           <Route path="/men" element={<Men />} />
           <Route path="/accessories" element={<Accessories />} />
           <Route path="/productDetails" element={<ProductDetails />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blogDetails" element={<BlogDetails />} />
           <Route path="/products" element={<Products />} />
+          <Route path="/saleHover" element={<SaleHover />} />
+          {/* <Route path="*" element={<NotFound />} /> */}
         </Routes>
-        <ScrollToTop />
-        <Footer />
+        {/* <ScrollToTop /> */}
+        {/* <Footer /> */}
       </BrowserRouter>
+
     </>
   )
 }

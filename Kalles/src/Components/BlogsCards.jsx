@@ -1,4 +1,6 @@
+import { motion } from 'framer-motion';
 import React from 'react'
+
 
 export const BlogsCards = () => {
 
@@ -23,11 +25,16 @@ export const BlogsCards = () => {
         },
     ];
     return (
-        <div className=" cursor-pointer blogs flex items-center justify-center flex-wrap gap-5 px-10 py-10 max-w-screen-xl mx-auto">
+        <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: false, amount: 0.2 }}
+            className=" cursor-pointer blogs flex items-center justify-center flex-wrap gap-5 px-10 py-10 max-w-screen-xl mx-auto">
             {
                 BlogCards.map((blog, index) => (
-                    <div className='flex flex-col gap-3 w-[380px] group '>
-                        <div key={index} className='h-[280px] w-[380px]  z-10 relative flex items-center justify-center overflow-hidden'>
+                    <div key={index} className='flex flex-col gap-3 w-[380px] group '>
+                        <div  className='h-[280px] w-[380px]  z-10 relative flex items-center justify-center overflow-hidden'>
                             <img src={blog.img} className="h-[280px] w-[380px] object-cover  absolute z-0 transform scale-110 group-hover:-translate-y-3 transition duration-500" alt="no" />
                             <div className="box ">
                             </div>
@@ -41,6 +48,6 @@ export const BlogsCards = () => {
                 ))
             }
 
-        </div>
+        </motion.div>
     )
 }

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export const Footer = () => {
     const hoverEffect = "hover:text-[#56cfe1] cursor-pointer transition duration-300"
@@ -31,7 +32,7 @@ export const Footer = () => {
                         <div className="social-links flex gap-6">
                             <i className="bi bi-facebook transform hover:-translate-y-1 hover:text-[#3b5998] text-lg transition duration-300 cursor-pointer "></i>
                             <i className="bi bi-twitter-x transform hover:-translate-y-1 hover:text-[#1da1f2] text-lg transition duration-300 cursor-pointer "></i>
-                            <i className="bi bi-instagram transform hover:-translate-y-1 hover:text-[#1da1f2] text-lg transition duration-300 cursor-pointer "></i>
+                            <i className="bi bi-instagram transform hover:-translate-y-1 hover:text-[#e03566] text-lg transition duration-300 cursor-pointer "></i>
                             <i className="bi bi-linkedin transform hover:-translate-y-1 hover:text-[#0077b5] text-lg transition duration-300 cursor-pointer "></i>
                             <i className="bi bi-pinterest transform hover:-translate-y-1 hover:text-[#cb2027] text-lg transition duration-300 cursor-pointer "></i>
                         </div>
@@ -94,8 +95,8 @@ export const Footer = () => {
                 </span>
                 <div className='flex gap-4'>
                     <span className={hoverEffect}>Shop</span>
-                    <span className={hoverEffect}>About Us</span>
-                    <span className={hoverEffect}>Contact Us</span>
+                    <Link to="/aboutUs" className={hoverEffect}>About Us</Link>
+                    <Link to="/contactUs" className={hoverEffect}>Contact Us</Link>
                     <span className={hoverEffect}>Blog</span>
                 </div>
             </div>

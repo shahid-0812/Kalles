@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { CatNav } from '../Components/CatNav';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Compare } from '../Elements/Compare';
 import { Heart } from '../Elements/Heart';
 import { QuickView } from '../Components/QuickView';
+import { CartContext } from '../Components/CartContext';
 
 
 export const Women = () => {
@@ -13,29 +14,36 @@ export const Women = () => {
     const [quickView, setQuickView] = useState(false);
 
     console.log(quickView);
+    const { addToCart } = useContext(CartContext);
 
     const WomenProducts = [
         {
+            id: 1,
             img: "/images/women/pro-1.webp",
             img2: "/images/women/pro-1-1.webp",
         },
         {
+            id: 2,
             img: "/images/women/pro-1.webp",
             img2: "/images/women/pro-1-1.webp",
         },
         {
+            id: 3,
             img: "/images/women/pro-1.webp",
             img2: "/images/women/pro-1-1.webp",
         },
         {
+            id: 4,
             img: "/images/women/pro-1.webp",
             img2: "/images/women/pro-1-1.webp",
         },
         {
+            id: 5,
             img: "/images/women/pro-1.webp",
             img2: "/images/women/pro-1-1.webp",
         },
         {
+            id: 6,
             img: "/images/women/pro-1.webp",
             img2: "/images/women/pro-1-1.webp",
         },
@@ -80,7 +88,7 @@ export const Women = () => {
                 <div className="product-cards">
                     {
                         WomenProducts.map((item, index) => (
-                            <div key={index} className='border border-[#ddd] p-5 flex gap-8 items-center justify-between'>
+                            <div key={index} className='border border-[#ddd] p-2 flex gap-8 items-center justify-between'>
                                 <Link to="/productDetails">
                                     <motion.div
                                         className='relative cursor-pointer group overflow-hidden'
@@ -94,7 +102,7 @@ export const Women = () => {
 
                                         <motion.img
                                             src={item.img2}
-                                            className="h-[300px] absolute top-0 left-0 object-cover opacity-0 group-hover:opacity-100 transition duration-700 group-hover:scale-105"
+                                            className=" absolute top-0 left-0 object-cover opacity-0 group-hover:opacity-100 transition duration-700 group-hover:scale-105"
                                             alt=""
 
                                         />
@@ -103,12 +111,19 @@ export const Women = () => {
 
                                         <motion.img
                                             src={item.img}
-                                            className="h-[300px]   object-cover opacity-100 group-hover:opacity-0 transition duration-300"
+                                            className="   object-cover opacity-100 group-hover:opacity-0 transition duration-300"
                                             alt=""
 
                                         />
+                                        <motion.div className='max-md:flex hidden absolute flex-col top-0 left-0 text-[#fff] text-lg mx-3 my-2'>
 
-                                        <motion.div className='flex absolute flex-col top-0 left-0 text-[#fff] text-lg mx-3 my-2'>
+                                            <i className="bi bi-suit-heart hover:text-[#000] inline-block"></i>
+                                            <i className="bi bi-arrow-left-right hover:text-[#000] inline-block"></i>
+
+
+                                        </motion.div>
+
+                                        <motion.div className='flex max-md:hidden absolute flex-col top-0 left-0 text-[#fff] text-lg mx-3 my-2'>
                                             <Compare index={index} hoverIndex={hoverIndex} />
                                             <Heart index={index} hoverIndex={hoverIndex} />
                                         </motion.div>
@@ -119,16 +134,16 @@ export const Women = () => {
                                 <div className='text-[#696969] flex-1/2 gap-1 text-sm  flex flex-col'>
                                     <Link to="/productDetails" className='text-[#000] medium hover:text-[#56cfe1] transition duration-300'>Tovi Girl With Cat Printed</Link>
                                     <span>$15.00</span>
-                                    <span>Typography is the work of typesetters, compositors, typographers, graphic designers, art directors, manga artists, comic book artists, graffiti artists, and now—anyone who arranges words, letters, numbers, and symbols for publication,...</span>
+                                    <span className='max-md:hidden'>Typography is the work of typesetters, compositors, typographers, graphic designers, art directors, manga artists, comic book artists, graffiti artists, and now—anyone who arranges words, letters, numbers, and symbols for publication,...</span>
                                 </div>
 
-                                <div className='flex flex-col gap-2'>
+                                <div className='flex flex-col gap-2 max-md:flex-1/2'>
                                     <button onClick={() => setQuickView(!quickView)} className='text-[#56cfe1] border border-[#56cfe1] rounded-full py-3 text-sm cursor-pointer'>Quick view</button>
                                     <div className="flex items-center bg-[#56cfe1] text-sm rounded-full overflow-hidden">
-                                        <button className="bg-[#56cfe1] text-white px-4 py-3 hover:bg-[#31bcd1] transition duration-200 cursor-pointer" onClick={() => setQuantity(quantity > 0 ? quantity - 1 : 0)}>-</button>
+                                        <button className="bg-[#56cfe1] text-white px-4 py-3 max-md:px-2 hover:bg-[#31bcd1] transition duration-200 cursor-pointer" onClick={() => setQuantity(quantity > 0 ? quantity - 1 : 0)}>-</button>
                                         <span className="bg-[#56cfe1] border-l-[0.2px] border-r-[0.2px] hover:bg-[#31bcd1] transition duration-200 cursor-pointer border-[#FFFFFF26] text-white py-3 w-[40px] text-center">{quantity}</span>
-                                        <button className="bg-[#56cfe1] text-white px-4 py-3 hover:bg-[#31bcd1] transition duration-200 cursor-pointer" onClick={() => setQuantity(quantity + 1)}>+</button>
-                                        <button className=" text-white px-6 py-3 cursor-pointer">Add to cart</button>
+                                        <button className="bg-[#56cfe1] text-white px-4 py-3 max-md:px-2 hover:bg-[#31bcd1] transition duration-200 cursor-pointer" onClick={() => setQuantity(quantity + 1)}>+</button>
+                                        <button className="text-white px-6 max-md:px-3 py-3 cursor-pointer" onClick={() => addToCart(item, quantity)}>Add to cart</button>
                                     </div>
                                 </div>
                             </div>

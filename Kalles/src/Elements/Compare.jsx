@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 
 export const Compare = ({ index, hoverIndex }) => {
@@ -11,7 +11,7 @@ export const Compare = ({ index, hoverIndex }) => {
             transition={{ duration: 0.3 }}
         >
             <motion.i
-                className="bi bi-suit-heart hover:text-[#000] inline-block"
+                className="bi bi-arrow-left-right hover:text-[#000] inline-block"
                 whileHover={{ scale: 1.2 }}
                 transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
             ></motion.i>

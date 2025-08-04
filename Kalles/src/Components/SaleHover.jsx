@@ -1,35 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 import trending from "../jsonFiles/trendingCards.json";
-import { motion } from 'framer-motion';
-import { Heart } from '../Elements/Heart';
+import { hover, motion } from 'framer-motion';
 import { Compare } from '../Elements/Compare';
+import { Heart } from '../Elements/Heart';
 
-export const TrendingCards = () => {
+
+
+export const SaleHover = () => {
     const [hoverIndex, setHoverIndex] = useState(null);
+    const hoverEffect = "hover:text-[#56cfe1] cursor-pointer transition duration-300"
+
 
     return (
-        <div className="trending flex flex-col items-center gap-8 px-10 py-10 overflow-hidden max-w-screen-xl mx-auto">
-            <div className='flex flex-col items-center gap-1'>
-
-                <div className="flex items-center gap-3">
-                    <div className="w-20 h-0.5 bg-[#000]"></div>
-                    <span className='uppercase bold text-2xl'>Trending</span>
-                    <div className="w-20 h-0.5 bg-[#000]"></div>
-                </div>
-                <span className='italic'>Top view in this week</span>
+        <div className='sale-hover-container w-full overflow-hidden flex gap-2 px-5 py-5 bg-white'>
+            <div className='catogary flex flex-col w-[15%] uppercase text-sm medium'>
+                <span className={`mx-2 p-2 border-b border-[#ddd] ${hoverEffect}`}>Accessories</span>
+                <span className={`mx-2 p-2 border-b border-[#ddd] ${hoverEffect}`}>Men</span>
+                <span className={`mx-2 p-2 border-b border-[#ddd] ${hoverEffect}`}>women</span>
+                <span className={`mx-2 p-2 border-b border-[#ddd] ${hoverEffect}`}>bag</span>
+                <span className={`mx-2 p-2 border-b border-[#ddd] ${hoverEffect}`}>fashion</span>
+                <span className={`mx-2 p-2 border-b border-[#ddd] ${hoverEffect}`}>shoes</span>
+                <span className={`mx-2 p-2 border-b border-[#ddd] ${hoverEffect}`}>dress</span>
+                <span className={`mx-2 p-2 border-b border-[#ddd] ${hoverEffect}`}>watch</span>
             </div>
-
-            <motion.div
-
-                className="trending-cards flex gap-5 flex-wrap cursor-pointer items-center justify-center">
-
+            <div className="trending-cards flex gap-5 flex-wrap cursor-pointer items-center justify-center">
                 {
-                    trending.map((item, index) => (
-                        <motion.div
-                            initial={{ opacity: 0, y: 50 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, ease: "easeOut" }}
-                            viewport={{ once: false, amount: 0.2 }}
+                    trending.slice(0, 4).map((item, index) => (
+                        <div
                             key={index}
                             className='trending-card flex flex-col gap-3'
                             onMouseEnter={() => setHoverIndex(index)}
@@ -46,7 +43,7 @@ export const TrendingCards = () => {
                                         <>
                                             <motion.img
                                                 src={`/images/home/trending/trending-${item.id}-hover.webp`}
-                                                className="h-[350px] w-[280px] object-cover"
+                                                className="h-auto w-[240px] object-cover"
                                                 alt=""
                                                 variants={{
                                                     rest: { opacity: 0, scale: 1 },
@@ -60,7 +57,7 @@ export const TrendingCards = () => {
                                     ) : (
                                         <motion.img
                                             src={`/images/home/trending/trending-${item.id}.webp`}
-                                            className="h-[350px] w-[280px] object-cover"
+                                            className="h-auto w-[240px] object-cover"
                                             alt=""
                                             variants={{
                                                 rest: { opacity: 1, scale: 1 },
@@ -122,20 +119,10 @@ export const TrendingCards = () => {
                                 <h1 className='medium'>{item.title}</h1>
                                 <span className='text-[#696969]'>${item.price}.00</span>
                             </div>
-                        </motion.div>
+                        </div>
                     ))
                 }
-            </motion.div>
-            <button className='swipe-btn group border-2 border-[#000] medium cursor-pointer flex-1 h-12 my-10 rounded-full px-10 py-3 hover:border-[#23b2c7] transition duration-150'>
-                <span className='z-10 relative group-hover:text-[#fff] transition duration-300'>
-                    Load More
-                </span>
-
-
-            </button>
-
-
-
+            </div>
         </div>
-    );
-};
+    )
+}
