@@ -45,12 +45,13 @@ export const Products = () => {
         <div className='products-container'>
             <CatNav />
             {quickView && (
-                <div className="fixed inset-0 flex items-center justify-center z-50 bg-black/30">
+                <div className="fixed inset-0 z-50 bg-black/30 overflow-y-auto flex items-start justify-center py-10">
                     <div className="bg-white w-[90%] max-w-[1000px] rounded-md">
                         <QuickView setQuickView={setQuickView} />
                     </div>
                 </div>
             )}
+
 
             <div
                 style={{

@@ -15,7 +15,7 @@ export const ContactUs = () => {
                 <span className='z-10 text-sm'>Follow your passion, and success will follow you</span>
             </div>
             <div className='w-full h-[400px] bg-[#ddd]'></div>
-            <div className='w-full px-10 py-10 flex justify-between gap-10'>
+            <div className='w-full px-10 py-10 flex justify-between gap-10 max-md:flex-col'>
                 <div className='flex flex-1 flex-col gap-8'>
                     <h1 className='uppercase text-xl font-bold'>drop us a line</h1>
                     <form action="" className='flex flex-col gap-5'>

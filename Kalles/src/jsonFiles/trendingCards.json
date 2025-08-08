@@ -71,5 +71,79 @@
         "img2": "/images/home/trending-1-hover.webp",
         "title": "Black Mountain Hat",
         "price": 50.00
+    },
+    {
+        "id": 9,
+        "img1": "/images/products/trending-4.webp",
+        "img2": "/images/home/trending-1-hover.webp",
+        "title": "Cluse La Boheme Rose Gold",
+        "originalPrice": 60.00,
+        "price": 45.00,
+        "discount": "25%",
+        "colors": [
+            "yellow",
+            "gray",
+            "green"
+        ]
+    },
+    {
+        "id": 10,
+        "img1": "/images/products/trending-5.webp",
+        "img2": "/images/home/trending-1-hover.webp",
+        "title": "Mercury Tee",
+        "price": 68.00
+    },
+    {
+        "id": 11,
+        "img1": "/images/products/trending-1.webp",
+        "img2": "/images/home/trending-1-hover.webp",
+        "title": "La Bohème Rose Gold",
+        "originalPrice": 60.00,
+        "price": 40.00,
+        "discount": "33%",
+        "colors": [
+            "black"
+        ]
+    },
+    {
+        "id": 12,
+        "img1": "/images/products/trending-1.webp",
+        "img2": "/images/home/trending-1-hover.webp",
+        "title": "Cream Women Pants",
+        "price": 35.00
+    },
+    {
+        "id": 13,
+        "img1": "/images/products/trending-1.webp",
+        "img2": "/images/home/trending-1-hover.webp",
+        "title": "Black Mountain Hat",
+        "price": 50.00
+    },
+    {
+        "id": 14,
+        "img1": "/images/products/trending-5.webp",
+        "img2": "/images/home/trending-1-hover.webp",
+        "title": "Mercury Tee",
+        "price": 68.00
+    },
+    {
+        "id": 15,
+        "img1": "/images/products/trending-1.webp",
+        "img2": "/images/home/trending-1-hover.webp",
+        "title": "La Bohème Rose Gold",
+        "originalPrice": 60.00,
+        "price": 40.00,
+        "discount": "33%",
+        "colors": [
+            "black"
+        ]
+    },
+    {
+        "id": 16,
+        "img1": "/images/products/trending-1.webp",
+        "img2": "/images/home/trending-1-hover.webp",
+        "title": "Cream Women Pants",
+        "price": 35.00
     }
+    
 ]

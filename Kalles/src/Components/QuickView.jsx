@@ -3,15 +3,20 @@ import React, { useState } from 'react'
 export const QuickView = ({ setQuickView }) => {
     const [count, setCount] = useState(0);
     return (
-        <div className='quick-view-container relative flex bg-[#fff] max-w-[1000px] w-full mx-auto'>
+        <div className='quick-view-container relative flex flex-col md:flex-row bg-[#fff] max-w-[1000px] w-full mx-auto'>
             <span
                 onClick={() => setQuickView(false)}
                 className='absolute -right-2 -top-2 cursor-pointer bg-[#000] text-[#fff] hover:bg-[#56cfe1] transition duration-300 px-3 py-2'>
                 <i className="bi bi-x-lg"></i>
             </span>
-            <div>
-                <img className='w-[900px] h-[auto]' src="/images/men/pro-1.webp" alt="" />
-            </div>
+
+            <img
+                className="max-w-full h-auto object-cover"
+                src="/images/men/pro-1.webp"
+                alt=""
+            />
+
+
             <div className='flex flex-col gap-5 px-5 py-5'>
                 <div>
                     <h1 className='medium text-xl'>Procut name</h1>

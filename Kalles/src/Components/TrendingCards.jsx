@@ -1,16 +1,42 @@
 import React, { useState } from 'react';
 import trending from "../jsonFiles/trendingCards.json";
 import { motion } from 'framer-motion';
-import { Heart } from '../Elements/Heart';
-import { Compare } from '../Elements/Compare';
+ import { Heart } from '../Elements/Heart';
+ import { Compare } from '../Elements/Compare';
+import { QuickView } from './QuickView';
+import { QuickShop } from './QuickShop';
 
 export const TrendingCards = () => {
     const [hoverIndex, setHoverIndex] = useState(null);
+    const [quickView, setQuickView] = useState(false);
+    const [quickShop, setQuickShop] = useState(false);
+    const [visibleCard, setvisibleCard] = useState(8);
+
+    const showmore = () => {
+        setvisibleCard(trending.length);
+    }
+    const cards = Array.from({ length: 12 }, (_, i) => ({
+        id: i + 1,
+        title: `Card ${i + 1}`,
+    }));
 
     return (
         <div className="trending flex flex-col items-center gap-8 px-10 py-10 overflow-hidden max-w-screen-xl mx-auto">
+            {quickView && (
+                <div className="fixed inset-0 z-50 bg-black/30 overflow-y-auto flex items-start justify-center py-10">
+                    <div className="bg-white w-[90%] max-w-[1000px] rounded-md">
+                        <QuickView setQuickView={setQuickView} />
+                    </div>
+                </div>
+            )}
+            {quickShop && (
+                <div className="fixed inset-0 z-50 bg-black/30 overflow-y-auto flex items-start justify-center py-10">
+                    <div className="bg-white w-[30%] max-w-[1000px] rounded-md">
+                        <QuickShop setQuickShop={setQuickShop} />
+                    </div>
+                </div>
+            )}
             <div className='flex flex-col items-center gap-1'>
-
                 <div className="flex items-center gap-3">
                     <div className="w-20 h-0.5 bg-[#000]"></div>
                     <span className='uppercase bold text-2xl'>Trending</span>
@@ -18,13 +44,10 @@ export const TrendingCards = () => {
                 </div>
                 <span className='italic'>Top view in this week</span>
             </div>
-
             <motion.div
-
                 className="trending-cards flex gap-5 flex-wrap cursor-pointer items-center justify-center">
-
                 {
-                    trending.map((item, index) => (
+                    trending.slice(0, visibleCard).map((item, index) => (
                         <motion.div
                             initial={{ opacity: 0, y: 50 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -79,8 +102,8 @@ export const TrendingCards = () => {
                                     transition={{ duration: 0.5 }}
                                 >
                                     <motion.div className='flex absolute flex-col top-0 left-0 text-[#fff] text-lg mx-3 my-2'>
-                                        <Compare index={index} hoverIndex={hoverIndex} />
                                         <Heart index={index} hoverIndex={hoverIndex} />
+                                        <Compare index={index} hoverIndex={hoverIndex} />
                                     </motion.div>
 
                                     <motion.div
@@ -90,17 +113,17 @@ export const TrendingCards = () => {
                                         transition={{ duration: 0.3 }}
                                         className="trending-buttons flex flex-col gap-2 m-auto"
                                     >
-                                        <button className="relative w-40 h-12 px-6 text-sm rounded-full bg-white hover:bg-[#000] overflow-hidden cursor-pointer group transition-all duration-300">
+                                        <button onClick={() => setQuickView(!quickView)} className="relative w-40 h-12 px-6 text-sm rounded-full bg-white hover:bg-[#000] overflow-hidden cursor-pointer group transition-all duration-300">
                                             <span className="absolute inset-0 flex items-center justify-center transition-all duration-300 group-hover:-translate-y-8">
                                                 Quick View
                                             </span>
                                             <i className="bi bi-eye absolute inset-0 flex items-center justify-center translate-y-8 opacity-0 transition-all duration-300 text-lg group-hover:text-[#fff] group-hover:translate-y-0 group-hover:opacity-100"></i>
                                         </button>
-                                        <button className="relative w-40 h-12 px-6 text-sm rounded-full bg-white hover:bg-[#000] overflow-hidden cursor-pointer group transition-all duration-300">
+                                        <button onClick={() => setQuickShop(!quickShop)} className="relative w-40 h-12 px-6 text-sm rounded-full bg-white hover:bg-[#000] overflow-hidden cursor-pointer group transition-all duration-300">
                                             <span className="absolute inset-0 flex items-center justify-center transition-all duration-300 group-hover:-translate-y-8">
                                                 Quick shop
                                             </span>
-                                            <i className="bi bi-eye absolute inset-0 flex items-center justify-center translate-y-8 opacity-0 transition-all duration-300 text-lg group-hover:text-[#fff] group-hover:translate-y-0 group-hover:opacity-100"></i>
+                                            <i className="bi bi-cart absolute inset-0 flex items-center justify-center translate-y-8 opacity-0 transition-all duration-300 text-lg group-hover:text-[#fff] group-hover:translate-y-0 group-hover:opacity-100"></i>
                                         </button>
                                     </motion.div>
 
@@ -126,12 +149,10 @@ export const TrendingCards = () => {
                     ))
                 }
             </motion.div>
-            <button className='swipe-btn group border-2 border-[#000] medium cursor-pointer flex-1 h-12 my-10 rounded-full px-10 py-3 hover:border-[#23b2c7] transition duration-150'>
+            <button onClick={() => showmore} className='swipe-btn group border-2 border-[#000] medium cursor-pointer flex-1 h-12 my-10 rounded-full px-10 py-3 hover:border-[#23b2c7] transition duration-150'>
                 <span className='z-10 relative group-hover:text-[#fff] transition duration-300'>
                     Load More
                 </span>
-
-
             </button>
 
 

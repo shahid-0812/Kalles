@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import trending from "../jsonFiles/trendingCards.json";
 import { hover, motion } from 'framer-motion';
-import { Compare } from '../Elements/Compare';
-import { Heart } from '../Elements/Heart';
+ import { Compare } from '../Elements/Compare';
+ import { Heart } from '../Elements/Heart';
 
 
 
@@ -76,8 +76,8 @@ export const SaleHover = () => {
                                     transition={{ duration: 0.5 }}
                                 >
                                     <motion.div className='flex absolute flex-col top-0 left-0 text-[#fff] text-lg mx-3 my-2'>
-                                        <Compare index={index} hoverIndex={hoverIndex} />
                                         <Heart index={index} hoverIndex={hoverIndex} />
+                                        <Compare index={index} hoverIndex={hoverIndex} />
                                     </motion.div>
 
                                     <motion.div

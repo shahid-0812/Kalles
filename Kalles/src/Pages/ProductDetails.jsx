@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import trending from "../jsonFiles/trendingCards.json";
 import { motion } from "framer-motion"
-import { Compare } from '../Elements/Compare';
-import { Heart } from '../Elements/Heart';
+ import { Compare } from '../Elements/Compare';
+ import { Heart } from '../Elements/Heart';
 
 
 export const ProductDetails = () => {
@@ -17,7 +17,7 @@ export const ProductDetails = () => {
     const [hoverIndex, setHoverIndex] = useState(null);
 
 
-    
+
 
     const handleNext = () => {
         if (currIndex + itemsPer < trending.length) {

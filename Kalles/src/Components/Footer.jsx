@@ -7,7 +7,7 @@ export const Footer = () => {
     return (
         <>
 
-            <footer className='footer-container flex px-10 gap-5 items-start justify-center  py-15 bg-[#f6f6f8]'>
+            <footer className='text-sm footer-container flex px-10 gap-5 items-start justify-center  py-18 bg-[#f6f6f8]'>
                 <div className="column-1 px-5 flex  flex-col gap-4">
                     <h1 className="logo bold text-[2rem]">kalles</h1>
                     <div className='flex flex-col gap-4 text-[#878787] '>
@@ -41,33 +41,33 @@ export const Footer = () => {
                 <div className="column-2 px-5 w-fit flex flex-col gap-4">
                     <h1 className="logo medium ">Categories</h1>
                     <div className='flex flex-col gap-2 text-[#878787] '>
-                        <span>Men</span>
-                        <span>Women</span>
-                        <span>Accessories</span>
-                        <span>Shoes</span>
-                        <span>Watch</span>
-                        <span>Dress</span>
+                        <Link className={hoverEffect} to="/men">Men</Link>
+                        <Link className={hoverEffect} to="/women">Women</Link>
+                        <Link className={hoverEffect} to="/accessories">Accessories</Link>
+                        <Link className={hoverEffect} to="/shoes">Shoes</Link>
+                        <Link className={hoverEffect} to="/watch">Watch</Link>
+                        <Link className={hoverEffect} to="/dress">Dress</Link>
                     </div>
                 </div>
                 <div className="column-3 px-5 w-fit flex flex-col gap-4">
                     <h1 className="logo medium ">Information</h1>
                     <div className='flex flex-col whitespace-nowrap gap-2 text-[#878787] '>
-                        <span>About us</span>
-                        <span>Contact us</span>
-                        <span>Terms & Conditions </span>
-                        <span>Return & Exchange</span>
-                        <span>Shipping & Delivery</span>
-                        <span>Privacy Policy</span>
+                        <Link className={hoverEffect} to="/aboutUs">About us</Link>
+                        <Link className={hoverEffect} to="/contactUs">Contact us</Link>
+                        <Link className={hoverEffect} to="/termsCondition">Terms & Conditions </Link>
+                        <Link className={hoverEffect} to="/return">Return & Exchange</Link>
+                        <Link className={hoverEffect} to="/shipping">Shipping & Delivery</Link>
+                        <Link className={hoverEffect} to="/privacy">Privacy Policy</Link>
                     </div>
                 </div>
                 <div className="column-4 px-5 w-fit flex flex-col gap-4">
                     <h1 className="logo medium ">Useful links</h1>
                     <div className='flex flex-col whitespace-nowrap gap-2 text-[#878787] '>
-                        <span>Latest News</span>
-                        <span>My Account</span>
-                        <span>Size Guide</span>
-                        <span>FAQs</span>
-                        <span>FAQs 2</span>
+                        <span className={hoverEffect}>Latest News</span>
+                        <span className={hoverEffect}>My Account</span>
+                        <span className={hoverEffect}>Size Guide</span>
+                        <span className={hoverEffect}>FAQs</span>
+                        <span className={hoverEffect}>FAQs 2</span>
                     </div>
                 </div>
                 <div className="column-5 px-5  flex-col gap-4">

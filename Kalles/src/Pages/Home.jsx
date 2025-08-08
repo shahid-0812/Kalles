@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 
 import { TrendingCards } from '../Components/TrendingCards';
-import { BestSellers } from '../Components/BestSellers';
+
 import { BlogsCards } from '../Components/BlogsCards';
 import { motion } from 'framer-motion';
 import { InstaCards } from '../Components/InstaCards';
@@ -16,11 +16,11 @@ export const Home = () => {
 
 
     const slides = [
-        <div className="slide-1  flex items-center" style={{
+        <div className="slide-1  flex items-center h-[100vh] max-sm:h-[30vh]" style={{
             backgroundImage: `url('./images/home/slider-01.jpg')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            height: '100vh',
+
         }}>
             <motion.div
                 initial={{ opacity: 0, y: 50 }}
@@ -29,24 +29,24 @@ export const Home = () => {
                 viewport={{ once: false, amount: 0.5 }}
                 className="titles leading-none px-[10%] max-md:px-3 flex flex-col max-md:gap-0 gap-2 max-w-screen-xl">
                 <span className='medium text-[1.35rem] max-md:text-xs'>SUMMER 2023</span>
-                <h1 className='bold text-[3rem] max-md:text-xl'>New Arrival Collection</h1>
-                <Link to="/shop" className='slide-btn bg-[#000] w-fit text-[#fff] medium px-6 py-3 max-md:px-4 max-md:py-2 max-md:text-xs'>
+                <h1 className='bold text-[3rem] max-md:text-xl max-sm:text-lg'>New Arrival Collection</h1>
+                <Link to="/shop" className='slide-btn bg-[#000] w-fit text-[#fff] medium px-6 py-3 max-md:px-4 max-md:py-2 max-md:text-xs max-sm:px-3 max-sm:py-2'>
                     <span>
                         Explore Now
                     </span>
                 </Link >
             </motion.div>
         </div>,
-        <div className="slide-1  flex items-center justify-end" style={{
+        <div className="slide-1  flex items-center justify-end h-[100vh] max-sm:h-[30vh]" style={{
             backgroundImage: `url('./images/home/slider-02.jpg')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            height: '100vh',
+
         }}>
             <div className="titles leading-none px-[10%] max-md:px-3 flex flex-col max-md:gap-0 gap-2 max-w-screen-xl">
                 <span className='medium text-[1.35rem] max-md:text-xs'>New Season</span>
-                <h1 className='bold text-[3rem] max-md:text-xl'>Lookbook Collection</h1>
-                <Link to="/shop" className='slide-btn bg-[#000] w-fit text-[#fff] medium px-6 py-3 max-md:px-4 max-md:py-2 max-md:text-xs'>
+                <h1 className='bold text-[3rem] max-md:text-xl max-sm:text-lg'>Lookbook Collection</h1>
+                <Link to="/shop" className='slide-btn bg-[#000] w-fit text-[#fff] medium px-6 py-3 max-md:px-4 max-md:py-2 max-md:text-xs max-sm:px-3 max-sm:py-2'>
                     <span>
                         Explore Now
                     </span>
@@ -54,16 +54,16 @@ export const Home = () => {
 
             </div>
         </div>,
-        <div className="slide-1  flex items-center justify-center" style={{
+        <div className="slide-1  flex items-center justify-center h-[100vh] max-sm:h-[30vh]" style={{
             backgroundImage: `url('./images/home/slider-03.jpg')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            height: '100vh',
+
         }}>
             <div className="titles leading-none px-[10%] max-md:px-3 flex flex-col items-center max-md:gap-0 gap-2 max-w-screen-xl">
                 <span className='medium text-[1.35rem] max-md:text-xs'>SUMMER 2023</span>
-                <h1 className='bold text-[3rem] max-md:text-xl'>New Arrival Collection</h1>
-                <Link to="/shop" className='slide-btn bg-[#000] w-fit text-[#fff] medium px-6 py-3 max-md:px-4 max-md:py-2 max-md:text-xs'>
+                <h1 className='bold text-[3rem] max-md:text-xl max-sm:text-lg'>New Arrival Collection</h1>
+                <Link to="/shop" className='slide-btn bg-[#000] w-fit text-[#fff] medium px-6 py-3 max-md:px-4 max-md:py-2 max-md:text-xs max-sm:px-3 max-sm:py-2'>
                     <span>
                         Explore Now
                     </span>
@@ -124,9 +124,9 @@ export const Home = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     viewport={{ once: false, amount: 0.2 }}
-                    className='grid-1 relative flex justify-center  h-full flex-1 w-full group  cursor-pointer'>
-                    <img src="/images/home/grid-1.jpg" className=" object-cover transform group-hover:scale-105 transition duration-300" alt="" />
-                    <button className='bg-[#fff] w-fit text-[#000] medium px-6 py-3 absolute bottom-5 text-sm hover:text-[#fff] hover:bg-[#000] transition duration-300 cursor-pointer'>Women</button>
+                    className='grid-1 relative flex justify-center overflow-hidden h-[700px] flex-1 w-full group  cursor-pointer'>
+                    <img src="/images/home/grid-1.jpg" className="h-full w-full object-cover transform group-hover:scale-105 transition duration-300" alt="" />
+                    <Link to="/women" className='bg-[#fff] w-fit text-[#000] medium px-10 py-3 absolute bottom-5 text-sm hover:text-[#fff] hover:bg-[#000] transition duration-300 cursor-pointer'>Women</Link>
                 </motion.div>
                 <div className='flex gap-8 flex-1'>
                     <div className="grid-2 flex flex-col gap-8 flex-1 w-1/3 ">
@@ -135,19 +135,18 @@ export const Home = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, ease: "easeOut" }}
                             viewport={{ once: false, amount: 0.2 }}
-                            className="relative flex justify-center bg-center group overflow-hidden cursor-pointer">
+                            className="relative h-1/2 flex justify-center bg-center group overflow-hidden cursor-pointer">
                             <img src="/images/home/grid-2-1.jpg" className="w-full h-full object-cover transform group-hover:scale-105 transition duration-300" alt="" />
-                            <button className='bg-[#fff] w-fit text-[#000] medium px-6 py-3 absolute bottom-5 text-sm hover:text-[#fff] hover:bg-[#000] transition duration-300 cursor-pointer'>Accessories</button>
+                            <Link to="/accessories" className='bg-[#fff] w-fit text-[#000] medium px-10 py-3 absolute bottom-5 text-sm hover:text-[#fff] hover:bg-[#000] transition duration-300 cursor-pointer'>Accessories</Link>
                         </motion.div>
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, ease: "easeOut" }}
                             viewport={{ once: false, amount: 0.2 }}
-                            className="relative flex justify-center overflow-hidden cursor-pointer group">
+                            className="relative h-1/2 flex justify-center overflow-hidden cursor-pointer group">
                             <img src="/images/home/grid-2-2.jpg" className="w-full h-full object-cover bg-center transform group-hover:scale-105 transition duration-300" alt="" />
-
-                            <button className='bg-[#fff] w-fit text-[#000] medium px-6 py-3 absolute bottom-5 text-sm hover:text-[#fff] hover:bg-[#000] transition duration-300 cursor-pointer'>Footwear</button>
+                            <Link to="/footwear" className='bg-[#fff] w-fit text-[#000] medium px-10 py-3 absolute bottom-5 text-sm hover:text-[#fff] hover:bg-[#000] transition duration-300 cursor-pointer'>Footwear</Link>
                         </motion.div>
                     </div>
                     <motion.div
@@ -157,7 +156,7 @@ export const Home = () => {
                         viewport={{ once: false, amount: 0.2 }}
                         className='grid-3 relative flex justify-center h-full flex-1 w-1/2 group overflow-hidden cursor-pointer'>
                         <img src="/images/home/grid-3.jpg" className="w-full h-full object-cover transform group-hover:scale-105 transition duration-300" alt="" />
-                        <button className='bg-[#fff] w-fit text-[#000] medium px-6 py-3 absolute bottom-5 text-sm hover:text-[#fff] hover:bg-[#000] transition duration-300 cursor-pointer'>Women</button>
+                        <Link to="/watches" className='bg-[#fff] w-fit text-[#000] medium px-6 py-3 absolute bottom-5 text-sm hover:text-[#fff] hover:bg-[#000] transition duration-300 cursor-pointer'>Watches</Link>
                     </motion.div>
                 </div>
             </div>
@@ -197,13 +196,13 @@ export const Home = () => {
                 viewport={{ once: false, amount: 0.2 }}
                 className="insta w-full flex gap-5 flex-col py-10">
                 <div className="flex justify-center items-center gap-3">
-                    <div className="w-20 h-0.5 bg-[#000]"></div>
-                    <span className='uppercase bold text-2xl'>@ FOLLOW US ON INSTAGRAM</span>
-                    <div className="w-20 h-0.5 bg-[#000]"></div>
+                    <div className="w-15 h-0.5 bg-[#000]"></div>
+                    <span className='uppercase bold text-2xl max-md:text-lg'>@ FOLLOW US ON INSTAGRAM</span>
+                    <div className="w-15 h-0.5 bg-[#000]"></div>
                 </div>
 
                 <InstaCards />
-                <HomeInfoSlider />
+
                 <div className='flex max-md:hidden'>
                     <div className="info-cards flex gap-10 py-10 px-10 justify-center bgred-600">
 

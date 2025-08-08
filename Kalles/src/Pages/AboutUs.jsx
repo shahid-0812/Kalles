@@ -60,7 +60,7 @@ export const AboutUs = () => {
             <div className="about-us px-10 py-10">
                 <div className='flex flex-wrap gap-8'>
                     {aboutUs.map((item, index) => (
-                        <div key={index} className="max-w-[48%] flex flex-col gap-2">
+                        <div key={index} className="max-w-[48%] flex flex-col gap-2 max-md:max-w-full">
                             <h1 className='uppercase font-bold text-xl'>{item.title}</h1>
                             <span className='text-sm text-[#878787]'>{item.desc}</span>
                         </div>

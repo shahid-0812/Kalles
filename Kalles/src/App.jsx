@@ -19,6 +19,11 @@ import { SaleHover } from "./Components/SaleHover";
 import { NotFound } from "./Pages/NotFound";
 import { AboutUs } from "./Pages/AboutUs";
 import { ContactUs } from "./Pages/ContactUs";
+import { TermsCondition } from "./Pages/TermsCondition";
+import { ReturnExchange } from "./Pages/ReturnExchange";
+import { ShippingDelivery } from "./Pages/ShippingDelivery";
+import { FooterResponsive } from "./Components/FooterResponsive";
+import { ResetPassword } from "./Pages/ResetPassword";
 
 
 
@@ -45,11 +50,23 @@ function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/blogDetails" element={<BlogDetails />} />
           <Route path="/products" element={<Products />} />
+          <Route path="/termsCondition" element={<TermsCondition />} />
+          <Route path="/returnExchange" element={<ReturnExchange />} />
+          <Route path="/shippingDelivery" element={<ShippingDelivery />} />
           <Route path="/saleHover" element={<SaleHover />} />
+          <Route path="/saleHover" element={<ComparePage />} />
+          <Route path="/resetPassword" element={<ResetPassword />} />
           {/* <Route path="*" element={<NotFound />} /> */}
         </Routes>
         {/* <ScrollToTop /> */}
-        {/* <Footer /> */}
+        <div className="max-md:hidden inline">
+
+          <Footer />
+        </div>
+        <div className="hidden max-md:inline">
+
+          <FooterResponsive />
+        </div>
       </BrowserRouter>
 
     </>
