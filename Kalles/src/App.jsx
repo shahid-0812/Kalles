@@ -56,9 +56,9 @@ function App() {
           <Route path="/saleHover" element={<SaleHover />} />
           <Route path="/saleHover" element={<ComparePage />} />
           <Route path="/resetPassword" element={<ResetPassword />} />
-          {/* <Route path="*" element={<NotFound />} /> */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
-        {/* <ScrollToTop /> */}
+        <ScrollToTop />
         <div className="max-md:hidden inline">
 
           <Footer />
